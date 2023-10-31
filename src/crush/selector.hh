@@ -1,0 +1,6 @@
+#ifndef CRUSH_SELECTOR_TEMPLATE
+#define CRUSH_SELECTOR_TEMPLATE
+
+
+
+#endif
