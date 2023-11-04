@@ -1,0 +1,6 @@
+#ifndef CRUSH_NODE_TEMPLATE
+#define CRUSH_NODE_TEMPLATE
+
+
+
+#endif
