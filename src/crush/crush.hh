@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include "common.hh"
+#include "types.hh"
 #include "node.hh"
 
 std::vector<Node> select(Node &root, long input, int count, NodeType t);

@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-#include "common.hh"
+#include "types.hh"
 
 // abstract class to represent a node on the cluster.
 // this class should be implemented with additional 
