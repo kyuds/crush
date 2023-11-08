@@ -13,16 +13,16 @@
 // through the cluster.
 class Node {
     public:
-       virtual ~Node() {}
-       virtual BucketType getBucketType() = 0;
-       virtual NodeType getNodeType() = 0;
-       virtual std::string getId() = 0;
-       virtual int getWeight() = 0;
-       virtual bool failed() = 0;
-       virtual bool overloaded() = 0;
-       virtual bool isLeaf() = 0;
-       virtual Node& parent() = 0;
-       virtual std::vector<Node&> children() = 0;
+        virtual ~Node() {}
+        virtual BucketType getBucketType() = 0;
+        virtual NodeType getNodeType() = 0;
+        virtual std::string getId() = 0;
+        virtual int getWeight() = 0;
+        virtual bool failed() = 0;
+        virtual bool overloaded() = 0;
+        virtual bool isLeaf() = 0;
+        virtual Node* parent() = 0;
+        virtual std::vector<Node&> children() = 0;
 };
 
 #endif

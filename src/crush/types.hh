@@ -11,7 +11,10 @@ enum BucketType {
 };
 
 // This is subject to change based
-// on cluster configurations. 
+// on cluster configurations. Root
+// is the only mandatory type that
+// is going to determine the root
+// of the cluster. 
 enum NodeType {
     ROOT,
     ROW,
