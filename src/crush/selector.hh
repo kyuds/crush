@@ -4,6 +4,6 @@
 #include "types.hh"
 #include "node.hh"
 
-Node& select(Node& origin, long input, int round);
+Node* select(Node * origin, long input, int round);
 
 #endif

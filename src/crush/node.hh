@@ -22,7 +22,7 @@ class Node {
         virtual bool overloaded() = 0;
         virtual bool isLeaf() = 0;
         virtual Node* parent() = 0;
-        virtual std::vector<Node&> children() = 0;
+        virtual std::vector<Node*> children() = 0;
 };
 
 #endif

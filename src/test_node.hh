@@ -17,19 +17,20 @@ class TestNode : public Node {
             Node* _parent
         );
         ~TestNode() {};
-        virtual BucketType getBucketType();
-        virtual NodeType getNodeType();
-        virtual std::string getId();
-        virtual int getWeight();
-        virtual bool failed();
-        virtual bool overloaded();
-        virtual bool isLeaf();
-        virtual Node* parent();
-        virtual std::vector<Node&> children();
+
+        BucketType getBucketType() override;
+        NodeType getNodeType() override;
+        std::string getId() override;
+        int getWeight() override;
+        bool failed() override;
+        bool overloaded() override;
+        bool isLeaf() override;
+        Node* parent() override;
+        std::vector<Node*> children() override;
 
         void setFail(bool status);
         void setOverload(bool status);
-        void addChild(Node& child);
+        void addChild(Node* child);
     private:
         BucketType bt;
         NodeType nt;
@@ -39,11 +40,11 @@ class TestNode : public Node {
         bool overloaded_;
         bool leaf;
         Node* parent_;
-        std::vector<Node&> children_;
+        std::vector<Node*> children_;
 };
 
-void destroyNodesRecursive(Node& root);
-Node& sampleCluster(BucketType bt);
-void printNodes(Node& root);
+Node* sampleCluster(BucketType bt);
+void printNodes(Node* root);
+void destroyNodesRecursive(Node* root);
 
 #endif

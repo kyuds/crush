@@ -2,8 +2,8 @@
 
 #include <stdexcept>
 
-Node& select(Node& origin, long input, int round) {
-    switch(origin.getBucketType()) {
+Node* select(Node * origin, long input, int round) {
+    switch(origin->getBucketType()) {
         case UNIFORM:
             break;
         case LIST: 
