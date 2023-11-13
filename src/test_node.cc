@@ -21,25 +21,32 @@ Node* sampleCluster(BucketType bt) {
 
     std::vector<TestNode*> store1;
     for (int i = 0; i < 3; i++) {
-        auto name = "row" + std::to_string(i);
+        auto name = "r0" + std::to_string(i);
         auto nd = new TestNode(bt, NodeType::ROW, name, 1, root);
         root->addChild(nd);
         store1.push_back(nd);
     }
 
     std::vector<TestNode*> store2;
+    int id = 0;
     for (auto p : store1) {
         for (int i = 0; i < 3; i++) {
-            auto name = p->getId() + "_cab" + std::to_string(i);
+            auto name = "c0" + std::to_string(id++);
             auto nd = new TestNode(bt, NodeType::CABINET, name, 1, p);
             p->addChild(nd);
             store2.push_back(nd);
         }
     }
 
+    id = 0;
     for (auto p : store2) {
         for (int i = 0; i < 3; i++) {
-            auto name = p->getId() + "_disk" + std::to_string(i);
+            std::string name;
+            if (id < 10) {
+                name = "d0" + std::to_string(id++);
+            } else {
+                name = "d" + std::to_string(id++);
+            }
             auto nd = new TestNode(bt, NodeType::DISK, name, 1, p);
             p->addChild(nd);
         }
@@ -48,13 +55,18 @@ Node* sampleCluster(BucketType bt) {
     return (Node*) root;
 }
 
-void printNodes(Node* root) {
-
+void printNodes(Node* root, int offset) {
+    std::cout << std::string(offset, ' ') + "- " + root->getId() << std::endl;
+    for (auto n : root->children()) {
+        printNodes(n, offset + 3);
+    }
 }
 
 void destroyNodesRecursive(Node* root) {
     if (!root->isLeaf()) {
-
+        for (auto n : root->children()) {
+            destroyNodesRecursive(n);
+        }
     }
     delete root;
 }

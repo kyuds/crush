@@ -44,7 +44,7 @@ class TestNode : public Node {
 };
 
 Node* sampleCluster(BucketType bt);
-void printNodes(Node* root);
+void printNodes(Node* root, int offset);
 void destroyNodesRecursive(Node* root);
 
 #endif

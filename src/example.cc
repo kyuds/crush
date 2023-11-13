@@ -5,7 +5,7 @@
 int main() {
     // create sample cluster
     auto cluster = sampleCluster(BucketType::UNIFORM);
-    printNodes(cluster);
+    printNodes(cluster, 0);
 
     // test crush here.
 
