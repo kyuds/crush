@@ -3,7 +3,6 @@
 #include <iostream>
 
 // constructor
-// I know, its messy...
 TestNode::TestNode(BucketType _bt, NodeType _nt, std::string _id, int _weight, Node* _parent) {
     bt = _bt;
     nt = _nt;

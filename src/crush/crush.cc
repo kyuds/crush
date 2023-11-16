@@ -4,6 +4,8 @@
 
 #include "selector.hh"
 
+bool containNode(Node * candidate, std::vector<Node*> selected);
+
 // select algorithm from figure <Algorithm 1>
 std::vector<Node*> select(Node * root, long input, int count, NodeType t, bool first_n) {
     std::vector<Node*> selected;
