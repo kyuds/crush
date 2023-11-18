@@ -4,7 +4,9 @@
 
 #include "selector.hh"
 
+// helpers
 bool containNode(Node * candidate, std::vector<Node*> selected);
+Node* select(Node * origin, long input, int round);
 
 // select algorithm from figure <Algorithm 1>
 std::vector<Node*> select(Node * root, long input, int count, NodeType t, bool first_n) {
@@ -62,6 +64,21 @@ std::vector<Node*> select(Node * root, long input, int count, NodeType t, bool f
     }
     
     return selected;
+}
+
+Node* select(Node * origin, long input, int round) {
+    switch(origin->getBucketType()) {
+        case UNIFORM:
+            return select_uniform(origin, input, round);
+        case LIST: 
+            return select_list(origin, input, round);
+        case TREE:
+            return select_tree(origin, input, round);
+        case STRAW:
+            return select_straw(origin, input, round);
+        default:
+            throw std::invalid_argument("BucketType doesn't match any defined value.");
+    }
 }
 
 // helpers

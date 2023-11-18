@@ -1,5 +1,5 @@
-#ifndef CRUSH_COMMON_DEFINES
-#define CRUSH_COMMON_DEFINES
+#ifndef CRUSH_TYPES
+#define CRUSH_TYPES
 
 // This is static as described in 
 // the original paper.
